@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Search Results</title>
+   <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+   <div class="container">
+       <header>
+           <h1>Search Results</h1>
+       </header>
+
+
+       <!-- Display Course Analytics -->
+       <section class="analytics">
+           <h2>Course Analytics</h2>
+           {% if avg_gpa is not none %}
+               <p><strong>Average GPA:</strong> {{ avg_gpa | round(2) }}</p>
+               <p><strong>Median GPA:</strong> {{ median_gpa | round(2) }}</p>
+               <p><strong>Maximum GPA:</strong> {{ max_gpa | round(2) }}</p>
+               <p><strong>Minimum GPA:</strong> {{ min_gpa | round(2) }}</p>
+               <p><strong>GPA Standard Deviation:</strong> {{ gpa_std_dev | round(2) }}</p>
+               <p><strong>Average Grade Distribution:</strong></p>
+               <ul>
+                   {% for grade, value in avg_grade_distribution.items() %}
+                       <li>{{ grade }}: {{ value | round(2) }}%</li>
+                   {% endfor %}
+               </ul>
+           {% else %}
+               <p>No analytics available.</p>
+           {% endif %}
+       </section>
+
+
+       <!-- Display Individual Records in Table -->
+       <section class="results">
+           <h2>Individual Records</h2>
+           {% if table %}
+               <!-- Render Table of Results -->
+               <div class="table-container">
+                   {{ table | safe }}
+               </div>
+               <p><strong>Total Records:</strong> {{ rows }}</p>
+           {% else %}
+               <p>No results found for your search.</p>
+           {% endif %}
+       </section>
+
+
+       <a href="/">Back to Search</a>
+   </div>
+
+
+   <script src="/static/main.js"></script>
+</body>
+</html>
+
+
+
+
+
