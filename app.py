@@ -5,11 +5,11 @@ import pandas as pd
 app = Flask(__name__)
 
 
-# Load the CSV data
+
 data = pd.read_csv("Grade Distribution.csv")
 
 
-# Calculate the average GPA, median GPA, and grade distribution
+
 def calculate_analytics(filtered_data):
    if filtered_data.empty:
        return None, None, None, None, None, None
@@ -30,13 +30,12 @@ def calculate_analytics(filtered_data):
    return avg_gpa, median_gpa, max_gpa, min_gpa, gpa_std_dev, avg_grade_distribution
 
 
-# Home page route
+
 @app.route("/")
 def index():
    return render_template("index.html")
 
 
-# Search route to handle form submission and display results
 @app.route("/search", methods=["POST"])
 def search():
    course_number = request.form.get("course_number").strip().lower()
