@@ -1,4 +1,4 @@
-/* Global styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -9,7 +9,7 @@
  
  
  
- /* Body and background */
+
  body {
     background-color: #e9ecef;
     color: #495057;
@@ -19,7 +19,7 @@
  
  
  
- /* Main container for centering content */
+
  .container {
     width: 90%;
     max-width: 1200px;
@@ -33,7 +33,7 @@
  
  
  
- /* Header */
+
  header {
     text-align: center;
     margin-bottom: 40px;
@@ -59,7 +59,7 @@
  
  
  
- /* Course Analytics */
+
  .analytics {
     background-color: #f8f9fa;
     padding: 20px;
@@ -104,7 +104,7 @@
  
  
  
- /* Table Container */
+
  .table-container {
     width: 100%;
     max-width: 100%;  /* Ensure it stays within the page width */
@@ -116,7 +116,7 @@
  
  
  
- /* Table styles */
+
  .data {
     width: 100%;
     border-collapse: collapse;
@@ -126,7 +126,7 @@
  
  
  
- /* Table Header and Cells Styling */
+
  .data th,
  .data td {
     padding: 12px;
@@ -186,7 +186,7 @@
  footer a:hover {
     text-decoration: underline;
  }
- /* Global styles */
+
  * {
     margin: 0;
     padding: 0;
